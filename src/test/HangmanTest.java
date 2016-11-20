@@ -1,5 +1,8 @@
 package test;
+
 import static org.junit.Assert.*;
+
+import main.Hangman;
 
 import org.junit.*;
 
@@ -7,9 +10,20 @@ import org.junit.*;
 public class HangmanTest {
 
     @Test
-    public void testMain() {
-        fail("Not yet implemented");
+    public void testEnterWord() {
+        //fail("Not yet implemented");
+        Hangman h = new Hangman();
+        Assert.assertTrue(h.enterWord().equals("GRODA"));
     }
+    
+    @Test
+    public void testGuessLetter() {
+        Hangman h = new Hangman();
+        //h.enterWord();
+        Assert.assertTrue(h.guessLetter("G"));
+        Assert.assertFalse(h.guessLetter("K"));
+    }
+    
 
 }
 
